@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nraft.proto\"1\n\x0bVoteRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x14\n\x0c\x63\x61ndidate_id\x18\x02 \x01(\x05\"2\n\x0cVoteResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x14\n\x0cvote_granted\x18\x02 \x01(\x08\"j\n\x14\x41ppendEntriesRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x11\n\tleader_id\x18\x02 \x01(\x05\x12\x1a\n\x07\x65ntries\x18\x03 \x03(\x0b\x32\t.LogEntry\x12\x15\n\rleader_commit\x18\x04 \x01(\x05\"6\n\x15\x41ppendEntriesResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07success\x18\x02 \x01(\x08\")\n\x08LogEntry\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t2r\n\x04Raft\x12*\n\x0bRequestVote\x12\x0c.VoteRequest\x1a\r.VoteResponse\x12>\n\rAppendEntries\x12\x15.AppendEntriesRequest\x1a\x16.AppendEntriesResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nraft.proto\"`\n\x0bVoteRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x14\n\x0c\x63\x61ndidate_id\x18\x02 \x01(\x05\x12\x16\n\x0elast_log_index\x18\x03 \x01(\x05\x12\x15\n\rlast_log_term\x18\x04 \x01(\x05\"2\n\x0cVoteResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x14\n\x0cvote_granted\x18\x02 \x01(\x08\"\x99\x01\n\x14\x41ppendEntriesRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x11\n\tleader_id\x18\x02 \x01(\x05\x12\x1a\n\x07\x65ntries\x18\x03 \x03(\x0b\x32\t.LogEntry\x12\x15\n\rleader_commit\x18\x04 \x01(\x05\x12\x16\n\x0eprev_log_index\x18\x05 \x01(\x05\x12\x15\n\rprev_log_term\x18\x06 \x01(\x05\"6\n\x15\x41ppendEntriesResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07success\x18\x02 \x01(\x08\")\n\x08LogEntry\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\"9\n\x1bNetworkFragmentationRequest\x12\x1a\n\x12\x64isconnected_nodes\x18\x01 \x03(\x05\"/\n\x1cNetworkFragmentationResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x89\x01\n\x16InstallSnapshotRequest\x12\x0c\n\x04term\x18\x01 \x01(\x05\x12\x11\n\tleader_id\x18\x02 \x01(\x05\x12\x15\n\rsnapshot_data\x18\x03 \x01(\t\x12\x1b\n\x13last_included_index\x18\x04 \x01(\x05\x12\x1a\n\x12last_included_term\x18\x05 \x01(\x05\"\'\n\x17InstallSnapshotResponse\x12\x0c\n\x04term\x18\x01 \x01(\x05\x32\x88\x02\n\x04Raft\x12*\n\x0bRequestVote\x12\x0c.VoteRequest\x1a\r.VoteResponse\x12>\n\rAppendEntries\x12\x15.AppendEntriesRequest\x1a\x16.AppendEntriesResponse\x12N\n\x0f\x46ragmentNetwork\x12\x1c.NetworkFragmentationRequest\x1a\x1d.NetworkFragmentationResponse\x12\x44\n\x0fInstallSnapshot\x12\x17.InstallSnapshotRequest\x1a\x18.InstallSnapshotResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,15 +32,23 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'raft_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_VOTEREQUEST']._serialized_start=14
-  _globals['_VOTEREQUEST']._serialized_end=63
-  _globals['_VOTERESPONSE']._serialized_start=65
-  _globals['_VOTERESPONSE']._serialized_end=115
-  _globals['_APPENDENTRIESREQUEST']._serialized_start=117
-  _globals['_APPENDENTRIESREQUEST']._serialized_end=223
-  _globals['_APPENDENTRIESRESPONSE']._serialized_start=225
-  _globals['_APPENDENTRIESRESPONSE']._serialized_end=279
-  _globals['_LOGENTRY']._serialized_start=281
-  _globals['_LOGENTRY']._serialized_end=322
-  _globals['_RAFT']._serialized_start=324
-  _globals['_RAFT']._serialized_end=438
+  _globals['_VOTEREQUEST']._serialized_end=110
+  _globals['_VOTERESPONSE']._serialized_start=112
+  _globals['_VOTERESPONSE']._serialized_end=162
+  _globals['_APPENDENTRIESREQUEST']._serialized_start=165
+  _globals['_APPENDENTRIESREQUEST']._serialized_end=318
+  _globals['_APPENDENTRIESRESPONSE']._serialized_start=320
+  _globals['_APPENDENTRIESRESPONSE']._serialized_end=374
+  _globals['_LOGENTRY']._serialized_start=376
+  _globals['_LOGENTRY']._serialized_end=417
+  _globals['_NETWORKFRAGMENTATIONREQUEST']._serialized_start=419
+  _globals['_NETWORKFRAGMENTATIONREQUEST']._serialized_end=476
+  _globals['_NETWORKFRAGMENTATIONRESPONSE']._serialized_start=478
+  _globals['_NETWORKFRAGMENTATIONRESPONSE']._serialized_end=525
+  _globals['_INSTALLSNAPSHOTREQUEST']._serialized_start=528
+  _globals['_INSTALLSNAPSHOTREQUEST']._serialized_end=665
+  _globals['_INSTALLSNAPSHOTRESPONSE']._serialized_start=667
+  _globals['_INSTALLSNAPSHOTRESPONSE']._serialized_end=706
+  _globals['_RAFT']._serialized_start=709
+  _globals['_RAFT']._serialized_end=973
 # @@protoc_insertion_point(module_scope)
